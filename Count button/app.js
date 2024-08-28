@@ -1,12 +1,15 @@
 import "./styles.css";
 import { useState } from "react";
 export default function App() {
-  const [counter, setCounter] = useState(10);
+  const [counter, setCounter] = useState(0);
   return (
     <div className="App">
       <h3>Counter:{counter}</h3>
       <button
         onClick={() => {
+          if (counter >= 10) {
+            return;
+          }
           setCounter(counter + 1);
         }}
       >
@@ -14,6 +17,9 @@ export default function App() {
       </button>
       <button
         onClick={() => {
+          if (counter < 10) {
+            return;
+          }
           setCounter(counter - 1);
         }}
       >
