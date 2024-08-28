@@ -12,6 +12,13 @@ export default function App() {
       >
         Add 1
       </button>
+      <button
+        onClick={() => {
+          setCounter(counter - 1);
+        }}
+      >
+        Sub 1
+      </button>
     </div>
   );
 }
