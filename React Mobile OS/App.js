@@ -25,3 +25,34 @@ export default function App() {
     
   );
 }
+|| method
+import logo from './logo.svg';
+import './App.css';
+
+function App() {
+
+  const arr =[
+    {name:"HTC",style:"circle"},
+    {name:"Micromax",style:"disc"},
+    {name:"Samsung",style:"square"},
+    {name:"Apple",style:"Circle"}
+  ];
+  const arr2 =['Android','Blackberry','iPhone','windows'];
+
+  return (
+    <div className="App">
+      <h1>Mobile Manufactures</h1>
+     {arr.map((el)=>(
+      <li className={el.style}>{el.name}</li>
+     )
+     
+     )}
+     <h1>Mobile Operating System</h1>
+     {arr2.map((el)=>(
+      <li>{el}</li>
+     ))}
+    </div>
+  );
+}
+
+export default App;
