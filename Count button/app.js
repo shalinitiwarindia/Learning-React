@@ -5,14 +5,5 @@ export default function App() {
   return (
     <div className="App">
       <h3>Counter:{counter}</h3>
-      <button
-        onClick={() => {
-          if (counter >= 10) {
-            return;
-          }
-          setCounter(counter + 1);
-        }}
-      >
-        Add 1
-      </button>
+      
    
