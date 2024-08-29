@@ -15,16 +15,4 @@ export default function App() {
       >
         Add 1
       </button>
-      <button
-        onClick={() => {
-          if (counter < 10) {
-            return;
-          }
-          setCounter(counter - 1);
-        }}
-      >
-        Sub 1
-      </button>
-    </div>
-  );
-}
+   
