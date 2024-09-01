@@ -2,10 +2,13 @@ import { useState } from "react";
 import { TodoInput } from "./TodoInput";
 
 function Todo() {
-  const [todosList, setTodosList] = useState(["Learn React", "learn Redux"]);
+  const [todosList, setTodosList] = useState([]);
+  const getData = (todo) => {
+    setTodosList([...todosList, todo]);
+  };
   return (
     <div>
-      <TodoInput />
+      <TodoInput getData={getData} />
       {todosList.map((e) => (
         <div>{e}</div>
       ))}
