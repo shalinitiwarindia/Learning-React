@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const TodoInput = () => {
+export const TodoInput = ({ getData }) => {
   const [text, setText] = useState("");
   return (
     <div>
@@ -12,9 +12,13 @@ export const TodoInput = () => {
         type="text"
         placeholder="Enter Todo"
       />
-      <button>Add Todo</button>
-      {text}
+      <button
+        onClick={() => {
+          getData(text);
+        }}
+      >
+        Add Todo
+      </button>
     </div>
   );
 };
-
