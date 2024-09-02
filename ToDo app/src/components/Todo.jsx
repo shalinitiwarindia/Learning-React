@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { TodoInput } from "./TodoInput";
+import { TodoItem } from "./TodoItem";
 
 function Todo() {
   const [todosList, setTodosList] = useState([]);
@@ -10,7 +11,7 @@ function Todo() {
     <div>
       <TodoInput getData={getData} />
       {todosList.map((e) => (
-        <div>{e}</div>
+        <TodoItem todo={e}></TodoItem>
       ))}
     </div>
   );
