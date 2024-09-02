@@ -12,13 +12,6 @@ export const TodoInput = ({ getData }) => {
         type="text"
         placeholder="Enter Todo"
       />
-      <button
-        onClick={() => {
-          getData(text);
-        }}
-      >
-        Add Todo
-      </button>
-    </div>
+     
   );
 };
