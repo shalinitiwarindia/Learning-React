@@ -1,3 +1,5 @@
+//Delete button
+
 export const TodoItem = ({ todo }) => {
   return (
     <div>
