@@ -20,14 +20,7 @@ export const Todos = () => {
                 onChange={(e) => setText(e.target.value)}
                 type="text"
                 placeholder="Enter todo" />
-                <button 
-                onClick={()=>{
-                    const payload ={
-                      title:text,
-                      status:false,  
-                    };
-                
-                }}>Add todo</button>
+               
                 {todos.map((t)=>(
                     <div>{t.title}</div>
                 ))}
