@@ -26,15 +26,7 @@ export const Todos = () => {
                       title:text,
                       status:false,  
                     };
-                    fetch("http://localhost:8080/todos",{
-                        method:"POST",
-                        headers:{
-                            "content-type": "application/json",
-                        },
-                        body: JSON.stringify(payload),
-                    }).then(()=>{
-                       getData(); 
-                    });
+                
                 }}>Add todo</button>
                 {todos.map((t)=>(
                     <div>{t.title}</div>
