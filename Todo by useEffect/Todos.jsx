@@ -14,17 +14,7 @@ export const Todos = () => {
           setTodos(data);
           setLoading(false);
         };
-        return loading ? ("Loading....." ):(
-            <div>
-                <input 
-                onChange={(e) => setText(e.target.value)}
-                type="text"
-                placeholder="Enter todo" />
-               
-                {todos.map((t)=>(
-                    <div>{t.title}</div>
-                ))}
-            </div>
+      
         );
     
     };
