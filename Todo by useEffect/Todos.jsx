@@ -7,16 +7,4 @@ export const Todos = () => {
         getData();
 
     },[]);
-    const getData=async () => {
-        const data = await  fetch("http://localhost:8080/todos")
-        .then((d) => d.json());
-      
-          setTodos(data);
-          setLoading(false);
-        };
-      
-        );
-    
-    };
-
-
+  
