@@ -25,3 +25,44 @@ function App() {
 
 
 export default App;
+
+
+
+//another part of coding, it includes changinmg theme button 
+import "./styles.css";
+import { Button } from "./components/Button";
+import { useState } from "react";
+export default function App() {
+  const [theme, setTheme] = useState("dark");
+  return (
+    <div className="App">
+      <h3>Theme is: {theme}</h3>
+      {/* <Button />
+    <Button />
+    <Button /> */}
+
+      <Button
+        onClick={() => {
+          alert("Clicked click me");
+        }}
+      >
+        Click me
+      </Button>
+      <Button
+        onClick={() => {
+          alert("Clicked Sign In ");
+        }}
+      >
+        Sign In
+      </Button>
+      <Button
+        onClick={() => {
+          setTheme(theme === "light" ? "dark" : "light");
+        }}
+      >
+        Change Theme
+      </Button>
+    </div>
+  );
+}
+
