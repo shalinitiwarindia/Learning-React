@@ -9,15 +9,4 @@ export const UsersList = () => {
         });
     },[]);
     return (
-    <div>
-        {users.map((user)=>(
-            <p key={user.id}>
-                <Link to={`/users/${user.id}`}>
-                {user.id}.{user.first_name}
-                </Link>
-                
-            </p>
-        ))}
-    </div>
-    );
-};
+   
