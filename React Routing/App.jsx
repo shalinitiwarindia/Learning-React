@@ -6,6 +6,8 @@ import { About } from './components/About';
 import { Navbar } from './components/Navbar';
 import { UsersList } from './components/UsersList';
 import { UserDetails } from './components/UserDetails';
+import { PrivateRoute } from './components/PrivateRoute';
+import { Login } from './components/Login';
 
 function App() {
   
@@ -13,10 +15,14 @@ function App() {
     <div className="App">
       <Navbar/>
       <Routes>
+      <Route path='/users/:id' element={<PrivateRoute>
+          <UserDetails/>
+        </PrivateRoute>}></Route>
         <Route path='/' element={<Home />}></Route>
         <Route path='/about' element={<About />}></Route>
         <Route path='/users' element={<UsersList />}></Route>
-        <Route path='/users/:id' element={<UserDetails />}></Route>
+        
+        <Route path='/login' element={<Login/>}></Route>
       </Routes>
      
     </div>
