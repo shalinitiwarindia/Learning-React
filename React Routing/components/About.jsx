@@ -1,8 +1,8 @@
-export const About = () => {
+export const About =() => {
     return (
         <div>
-            <h2>About us</h2>
-            <p>we are a very good company</p>
+            <h2>Hello</h2>
+            <p>We are good company</p>
         </div>
-    );
-};
+    )
+}
