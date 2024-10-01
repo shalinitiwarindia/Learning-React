@@ -1,26 +1,29 @@
+import { useEffect, useState } from "react"
 import axios from "axios";
-import { useContext, useEffect, useState } from "react";
-import { Navigate, useParams } from "react-router-dom"
-import { AuthContext } from "../contexts/AuthContext";
+import { Link } from "react-router-dom";
 
-export const UserDetails = () => {
-    const {id} = useParams();
-    const [user,setUser] = useState({});
-    const {isAuth}=useContext(AuthContext);
-
-    useEffect(() =>{
-        axios.get(`https://reqres.in/api/users/${id}`).then(({data}) => {
-            setUser(data.data);
-        })
-    },[]);
-    if(!isAuth){
-      return <Navigate to={"/login"} />;  
-    }
-
-    return <div>
-        <img src={user.avatar} alt="" />
-        <div>First Name: {user.first_name}</div>
-        <div>Last Name: {user.last_name}</div>
-    
-    </div>
+const useQuery =(q) => {
+    const param = new URLSearchParams(window.location.search);
+    return param.get(q);
 }
+export const UsersList = () => {
+    const [users,setUsers]=useState([]);
+    console.log(useQuery("page"));
+    useEffect(()=>{
+        axios.get("https://reqres.in/api/users").then(({data})=>{
+            setUsers(data.data);
+        });
+    },[]);
+    return (
+    <div>
+        {users.map((user)=>(
+            <p key={user.id}>
+                <Link to={`/users/${user.id}`}>
+                {user.id}.{user.first_name}
+                </Link>
+
+            </p>
+        ))}
+    </div>
+    );
+};
